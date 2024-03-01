@@ -4,7 +4,9 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <div className='!bg-[#191D26] text-white'>
+    <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </div>
 )
