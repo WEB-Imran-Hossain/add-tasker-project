@@ -2,6 +2,7 @@ import { useState } from "react";
 import SearchTask from "./SearchTask";
 import TaskActions from "./TaskActions";
 import TaskList from "../TaskList";
+import AddTaskModal from "./AddTaskModal";
 
 export default function TaskBoard() {
   // table data create (as linke JSON file)
@@ -16,17 +17,23 @@ export default function TaskBoard() {
   };
 
   const [tasks, setTask] = useState([defaultTask]);
+  const [showAddModal, setShowAddModal] = useState(false);
+
+  function handleAddTask() {
+    console.log("Adding a Task");
+  }
 
   return (
     <section className="mb-20" id="tasks">
+      {showAddModal && <AddTaskModal />}
       <div className="container">
         {/* Search Box */}
         <div className="p-2 flex justify-end">
-          <SearchTask></SearchTask>
+          <SearchTask />
         </div>
         {/* Search Box Ends */}
         <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
-          <TaskActions></TaskActions>
+          <TaskActions onAddClick={()=> setShowAddModal(true)} />
 
           <TaskList tasks={tasks} />
         </div>
