@@ -40,9 +40,9 @@ export default function AddTaskModal({ onSave }) {
               className="block w-full rounded-md bg-[#2D323F] px-3 py-2.5"
               type="text"
               name="title"
+              id="title"
               value={task.title}
               onChange={handleChange}
-              id="title"
               required=""
             />
           </div>
@@ -54,9 +54,9 @@ export default function AddTaskModal({ onSave }) {
               className="block min-h-[120px] w-full rounded-md bg-[#2D323F] px-3 py-2.5 lg:min-h-[180px]"
               type="text"
               name="description"
+              id="description"
               value={task.description}
               onChange={handleChange}
-              id="description"
               required=""
               defaultValue={""}
             />
@@ -71,9 +71,9 @@ export default function AddTaskModal({ onSave }) {
                 className="block w-full rounded-md bg-[#2D323F] px-3 py-2.5"
                 type="text"
                 name="tags"
+                id="tags"
                 value={task.tags}
                 onChange={handleChange}
-                id="tags"
                 required=""
               />
             </div>
@@ -84,9 +84,9 @@ export default function AddTaskModal({ onSave }) {
               <select
                 className="block w-full cursor-pointer rounded-md bg-[#2D323F] px-3 py-2.5"
                 name="priority"
+                id="priority"
                 value={task.priority}
                 onChange={handleChange}
-                id="priority"
                 required=""
               >
                 <option value="">Select Priority</option>

@@ -16,15 +16,15 @@ export default function TaskBoard() {
     isFavourite: true,
   };
 
-  const [tasks, setTask] = useState([defaultTask]);
+  const [tasks, setTasks] = useState([defaultTask]);
   const [showAddModal, setShowAddModal] = useState(false);
 
-  function handleAddTask({tag}) {
-    console.log("Adding a Task...", tag);
+  function handleAddTask(task) {
+    console.log("Adding a Task...", task);
   }
-const showModal= ()=>{
-  setShowAddModal(true)
-}
+  const showModal = () => {
+    setShowAddModal(true);
+  };
 
   return (
     <section className="mb-20" id="tasks">
