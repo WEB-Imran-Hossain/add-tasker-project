@@ -19,7 +19,8 @@ export default function TaskBoard() {
   const [tasks, setTasks] = useState([defaultTask]);
   const [showAddModal, setShowAddModal] = useState(false);
 
-  function handleAddTask(task) {
+  function handleAddTask(task, e) {
+    e.preventDefault();
     console.log("Adding a Task...", task);
   }
   const showModal = () => {

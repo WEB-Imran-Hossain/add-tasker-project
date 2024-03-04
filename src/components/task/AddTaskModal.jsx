@@ -43,7 +43,7 @@ export default function AddTaskModal({ onSave }) {
               id="title"
               value={task.title}
               onChange={handleChange}
-              required=""
+              required
             />
           </div>
 
@@ -57,8 +57,7 @@ export default function AddTaskModal({ onSave }) {
               id="description"
               value={task.description}
               onChange={handleChange}
-              required=""
-              defaultValue={""}
+              required
             />
           </div>
 
@@ -74,7 +73,7 @@ export default function AddTaskModal({ onSave }) {
                 id="tags"
                 value={task.tags}
                 onChange={handleChange}
-                required=""
+                required
               />
             </div>
 
@@ -87,7 +86,7 @@ export default function AddTaskModal({ onSave }) {
                 id="priority"
                 value={task.priority}
                 onChange={handleChange}
-                required=""
+                required
               >
                 <option value="">Select Priority</option>
                 <option value="low">Low</option>
@@ -103,7 +102,7 @@ export default function AddTaskModal({ onSave }) {
           <button
             type="submit"
             className="rounded bg-blue-600 px-4 py-2 text-white transition-all hover:opacity-80"
-            onClick={() => onSave(task)}
+            onClick={(e) => onSave(task, e)}
           >
             Save
           </button>
