@@ -1,6 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 
-export default function TaskList({ tasks, onEdit, onDelete }) {
+export default function TaskList({ tasks, onEdit, onDelete, onFav }) {
   return (
     <div className="overflow-auto">
       <table className="table-fixed overflow-auto xl:w-full">
@@ -37,11 +37,13 @@ export default function TaskList({ tasks, onEdit, onDelete }) {
               className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2"
             >
               <td>
-                {task.isFavourite ? (
-                  <FaStar className="text-[yellow]" />
-                ) : (
-                  <FaStar className="text-[gray]" />
-                )}
+                <button onClick={() => onFav(task.id)}>
+                  {task.isFavourite ? (
+                    <FaStar className="text-[yellow]" />
+                  ) : (
+                    <FaStar className="text-[gray]" />
+                  )}
+                </button>
               </td>
               <td>{task.title}</td>
               <td>
@@ -61,7 +63,10 @@ export default function TaskList({ tasks, onEdit, onDelete }) {
               <td className="text-center">{task.priority}</td>
               <td>
                 <div className="flex items-center justify-center space-x-3">
-                  <button className="text-red-500" onClick={() => onDelete(task.id)}>
+                  <button
+                    className="text-red-500"
+                    onClick={() => onDelete(task.id)}
+                  >
                     Delete
                   </button>
                   <button

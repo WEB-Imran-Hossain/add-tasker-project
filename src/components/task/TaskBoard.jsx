@@ -58,7 +58,17 @@ export default function TaskBoard() {
 
   function handleDeleteAllClick() {
     tasks.length = 0;
-    setTasks([...tasks])
+    setTasks([...tasks]);
+  }
+
+  function handleFavorite(taskId) {
+    const taskIndex = tasks.findIndex((task) => task.id === taskId);
+
+    const newTasks = [...tasks];
+
+    newTasks[taskIndex].isFavourite = !newTasks[taskIndex].isFavourite;
+
+    setTasks(newTasks)
   }
 
   return (
@@ -86,6 +96,7 @@ export default function TaskBoard() {
             tasks={tasks}
             onEdit={handleEditTask}
             onDelete={handleDeleteTask}
+            onFav={handleFavorite}
           />
         </div>
       </div>
